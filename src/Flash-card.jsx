@@ -100,9 +100,9 @@ export default function FlashCard(props){
             <p data-test="flashcard-text">{textoCard}</p>
             {imgEmDisplay === 'play' ? <img data-test="play-btn" onClick={darPlay} src={playimg} /> : ''}
             {imgEmDisplay === 'setinha' ? <img data-test="turn-btn" onClick={virarCarta} src={virar}/> : '' }
-            {imgEmDisplay === 'icone-errado' ? <img src={erro}/> : ''}
-            {imgEmDisplay === 'icone-quase' ? <img src={quase}/> : ''}
-            {imgEmDisplay === 'zap' ? <img src={certo}/> : ''}
+            {imgEmDisplay === 'icone-errado' ? <img data-test="no-icon" src={erro}/> : ''}
+            {imgEmDisplay === 'icone-quase' ? <img data-test="partial-icon" src={quase}/> : ''}
+            {imgEmDisplay === 'zap' ? <img data-test="zap-icon" src={certo}/> : ''}
             <div>
                 <BotaoNaoLembrei data-test="no-btn" onClick={() => naoLembrou(card.id)}>Não Lembrei</BotaoNaoLembrei>
                 <BotaoQuaseNaoLembrei data-test="partial-btn" onClick={() => quaseEsqueceuu(card.id)}>Quase não lembrei</BotaoQuaseNaoLembrei>
