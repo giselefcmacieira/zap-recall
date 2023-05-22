@@ -7,7 +7,7 @@ import erro from './assets/icone_erro.png';
 import { useState } from 'react';
 
 export default function FlashCard(props){
-    const {card, concluidas, setConcluidas} = props;
+    const {cards, card, concluidas, setConcluidas, finalizado, setFinalizado, contador, setContador} = props;
 
     const [textoCard, setTextoCard] = useState(`Pergunta ${card.id}`);
 
@@ -27,6 +27,7 @@ export default function FlashCard(props){
 
     const [imgEmDisplay, setimgEmDisplay] = useState('play');
 
+    const total = cards.length;
 
     function darPlay(){
 
@@ -59,6 +60,13 @@ export default function FlashCard(props){
         const novaArray = [...concluidas];
         novaArray.push({img: erro, dataTest: "no-icon"});
         setConcluidas(novaArray);
+
+        const novoContador = contador + 1;
+        setContador(novoContador);
+
+        if(novaArray.length === total && novoContador <= 0){
+            setFinalizado(true);
+        }
     }
 
     function quaseEsqueceuu(){
@@ -75,6 +83,10 @@ export default function FlashCard(props){
         const novaArray = [...concluidas];
         novaArray.push({img: quase, dataTest: "partial-icon"});
         setConcluidas(novaArray);
+
+        if(novaArray.length === total && contador <= 0){
+            setFinalizado(true);
+        }
     }
 
     function lembrouu(){
@@ -91,6 +103,10 @@ export default function FlashCard(props){
         const novaArray = [...concluidas];
         novaArray.push({img: certo, dataTest: "zap-icon"});
         setConcluidas(novaArray);
+
+        if(novaArray.length === total && contador <= 0){
+            setFinalizado(true);
+        }
     }
 
     return(

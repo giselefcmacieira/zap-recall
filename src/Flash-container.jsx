@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import FlashCard from './Flash-card';
 
 export default function FlashContainer(props){
-    const {cards, concluidas, setConcluidas} = props;
+    const {cards, concluidas, setConcluidas, finalizado, setFinalizado, contador, setContador} = props;
     return(
         <ContainerCards>
-            {cards.map(card => <FlashCard concluidas={concluidas} setConcluidas={setConcluidas} key={card.id} card={card}/>)}
+            {cards.map(card => <FlashCard cards={cards} concluidas={concluidas} setConcluidas={setConcluidas} finalizado={finalizado} setFinalizado={setFinalizado} contador={contador} setContador={setContador} key={card.id} card={card}/>)}
         </ContainerCards>
     );
 }

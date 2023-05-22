@@ -7,14 +7,23 @@ import { useState } from 'react';
 
 export default function Deck(){
     const [concluidas, setConcluidas] = useState([]);
+
+    const [finalizado, setFinalizado] = useState(false);
+
+    const [contador, setContador] = useState(0);
+
+    console.log(concluidas);
     return(
         <Deckk>
             <Header/>
             <FlashContainer cards={cards} 
-            concluidas={concluidas} setConcluidas={setConcluidas}/>
+            concluidas={concluidas} setConcluidas={setConcluidas}
+            finalizado={finalizado} setFinalizado={setFinalizado}
+            contador={contador} setContador={setContador}/>
             <Footer cards={cards} 
             concluidas={concluidas} setConcluidas={setConcluidas}
-            />
+            finalizado={finalizado} setFinalizado={setFinalizado}
+            contador={contador} setContador={setContador}/>
         </Deckk>
     );
 }
