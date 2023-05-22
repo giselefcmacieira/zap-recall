@@ -45,7 +45,7 @@ export default function FlashCard(props){
         setPositionImg('none');
     }
 
-    function naoLembrou(id){
+    function naoLembrou(){
 
         setTextoCard(`Pergunta ${card.id}`);
         setTextDecoration('line-through');
@@ -57,12 +57,11 @@ export default function FlashCard(props){
         setimgEmDisplay('icone-errado');
 
         const novaArray = [...concluidas];
-        novaArray.push(id);
+        novaArray.push({img: erro, dataTest: "no-icon"});
         setConcluidas(novaArray);
-        
     }
 
-    function quaseEsqueceuu(id){
+    function quaseEsqueceuu(){
 
         setTextoCard(`Pergunta ${card.id}`);
         setTextDecoration('line-through');
@@ -74,11 +73,11 @@ export default function FlashCard(props){
         setimgEmDisplay('icone-quase');
 
         const novaArray = [...concluidas];
-        novaArray.push(id);
+        novaArray.push({img: quase, dataTest: "partial-icon"});
         setConcluidas(novaArray);
     }
 
-    function lembrouu(id){
+    function lembrouu(){
 
         setTextoCard(`Pergunta ${card.id}`);
         setTextDecoration('line-through');
@@ -90,7 +89,7 @@ export default function FlashCard(props){
         setimgEmDisplay('zap');
 
         const novaArray = [...concluidas];
-        novaArray.push(id);
+        novaArray.push({img: certo, dataTest: "zap-icon"});
         setConcluidas(novaArray);
     }
 

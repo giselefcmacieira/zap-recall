@@ -10,8 +10,11 @@ export default function Deck(){
     return(
         <Deckk>
             <Header/>
-            <FlashContainer cards={cards} concluidas={concluidas} setConcluidas={setConcluidas}/>
-            <Footer cards={cards} concluidas={concluidas} setConcluidas={setConcluidas}/>
+            <FlashContainer cards={cards} 
+            concluidas={concluidas} setConcluidas={setConcluidas}/>
+            <Footer cards={cards} 
+            concluidas={concluidas} setConcluidas={setConcluidas}
+            />
         </Deckk>
     );
 }
