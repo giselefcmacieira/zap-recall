@@ -20,5 +20,6 @@ const ContainerIcones = styled.div`
     img{
         margin-left: 2.5px;
         margin-right: 2.5px;
+        margin-top: 6px;
     }
 `;

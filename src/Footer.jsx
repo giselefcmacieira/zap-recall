@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 import IconesConcluidos from './icones-concluidos';
+import { useState } from 'react';
 
 export default function Footer(props){
     const {cards, concluidas, setConcluidas} = props;
     const totalDeCards = cards.length;
     const totalDeConcluida = concluidas.length;
+
     console.log(concluidas);
     return(
         <>
-        <Rodape>
+        <Rodape data-test="footer" totalDeConcluida={totalDeConcluida} totalDeCards={totalDeCards}>
+            <p>{totalDeConcluida === totalDeCards ? 'Fim' : ''}</p>
             <p data-test="footer">{totalDeConcluida}/{totalDeCards} CONCLUÍDOS</p>
             <div>{concluidas.map(concluida => <IconesConcluidos src={concluida.img} dataTest={concluida.dataTest}/>)}</div>
         </Rodape>
@@ -19,7 +22,7 @@ export default function Footer(props){
 
 const Rodape = styled.div`
     width: 100%;
-    height: 70px;
+    height: ${props => props.totalDeConcluida === props.totalDeCards ? '171px' : '70px'};
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     position: fixed;
