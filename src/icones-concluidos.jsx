@@ -18,8 +18,9 @@ const ContainerIcones = styled.div`
     height: 23px;
     width: 100%;
     img{
-        margin-left: 2.5px;
-        margin-right: 2.5px;
-        margin-top: 6px;
+        margin-left: 1.7px;
+        margin-right: 1.7px;
+        margin-top: 3px;
+        margin-bottom: 5px; 
     }
 `;
